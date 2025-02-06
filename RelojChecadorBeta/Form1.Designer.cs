@@ -1,6 +1,6 @@
 ﻿namespace RelojChecadorBeta
 {
-    partial class Form1
+    partial class MyForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyForm));
             this.lblReloj = new System.Windows.Forms.Label();
             this.imageEmploye = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imageEmploye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReloj
@@ -42,19 +44,30 @@
             // 
             // imageEmploye
             // 
+            this.imageEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.imageEmploye, "imageEmploye");
             this.imageEmploye.Name = "imageEmploye";
             this.imageEmploye.TabStop = false;
+            this.imageEmploye.DoubleClick += new System.EventHandler(this.imageEmploye_DoubleClick);
             // 
-            // Form1
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // MyForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imageEmploye);
             this.Controls.Add(this.lblReloj);
-            this.Name = "Form1";
+            this.Name = "MyForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imageEmploye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -63,6 +76,7 @@
 
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.PictureBox imageEmploye;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

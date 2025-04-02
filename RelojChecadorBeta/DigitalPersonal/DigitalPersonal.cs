@@ -17,6 +17,7 @@ namespace RelojChecadorBeta.DigitalPersonal
         private Bitmap bitMap;
         public event Action<Bitmap> OnFingerprintCaptured;
         public event Action<DPFP.Sample> setSample;
+        public event Action<bool> isNotConnect;
 
 
         public DigitalPersonal()
@@ -95,6 +96,7 @@ namespace RelojChecadorBeta.DigitalPersonal
             convertion.ConvertToPicture(Sample, ref bitMap);
             OnFingerprintCaptured.Invoke(bitMap);
             setSample.Invoke(Sample);
+            isNotConnect(true);
             //MessageBox.Show("OnComplete");
         }
 
@@ -116,11 +118,24 @@ namespace RelojChecadorBeta.DigitalPersonal
         public void OnReaderDisconnect(object Capture, string ReaderSerialNumber)
         {
             //MessageBox.Show("OnReaderDisconnect");
+            isNotConnect(false);
         }
 
         public void OnSampleQuality(object Capture, string ReaderSerialNumber, CaptureFeedback CaptureFeedback)
         {
             //MessageBox.Show("OnSampleQuality");
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // DigitalPersonal
+            // 
+            this.ClientSize = new System.Drawing.Size(368, 261);
+            this.Name = "DigitalPersonal";
+            this.ResumeLayout(false);
+
         }
     }
 }

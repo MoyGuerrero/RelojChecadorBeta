@@ -83,29 +83,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\DbContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\DbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\DbContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Model\Empleado.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>RelojChecador.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Huella.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>RelojChecador.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Registro.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>RelojChecador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RelojChecador.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelojChecador.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RelojChecador.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelojChecador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RelojChecador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelojChecador.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +115,9 @@
     <Compile Include="RegisterEmployed.Designer.cs">
       <DependentUpon>RegisterEmployed.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DigitalPersonal\DigitalPersonal.resx">
+      <DependentUpon>DigitalPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,12 +133,12 @@
     <EmbeddedResource Include="RegisterEmployed.resx">
       <DependentUpon>RegisterEmployed.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\DbContext.edmx">
+    <EntityDeploy Include="Model\RelojChecador.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>RelojChecador.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\DbContext.edmx.diagram">
-      <DependentUpon>DbContext.edmx</DependentUpon>
+    <None Include="Model\RelojChecador.edmx.diagram">
+      <DependentUpon>RelojChecador.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -158,15 +161,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\DbContext.Context.tt">
+    <Content Include="Model\RelojChecador.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbContext.edmx</DependentUpon>
-      <LastGenOutput>DbContext.Context.cs</LastGenOutput>
+      <DependentUpon>RelojChecador.edmx</DependentUpon>
+      <LastGenOutput>RelojChecador.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\DbContext.tt">
+    <Content Include="Model\RelojChecador.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbContext.edmx</DependentUpon>
-      <LastGenOutput>DbContext.cs</LastGenOutput>
+      <DependentUpon>RelojChecador.edmx</DependentUpon>
+      <LastGenOutput>RelojChecador.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

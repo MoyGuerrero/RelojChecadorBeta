@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblReloj.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Rounded MT Bold, 72pt</value>
+    <value>Arial Rounded MT Bold, 48pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblReloj.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblReloj.Location" type="System.Drawing.Point, System.Drawing">
-    <value>634, 223</value>
+    <value>308, 9</value>
   </data>
   <data name="lblReloj.Size" type="System.Drawing.Size, System.Drawing">
     <value>706, 106</value>
@@ -151,13 +151,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblReloj.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="imageEmploye.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 137</value>
+    <value>450, 179</value>
   </data>
   <data name="imageEmploye.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 331</value>
+    <value>351, 229</value>
   </data>
   <data name="imageEmploye.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -175,10 +175,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;imageEmploye.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>804, 409</value>
+    <value>521, 466</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 165</value>
@@ -196,6 +196,93 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblEstatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 21.75pt</value>
+  </data>
+  <data name="lblEstatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>380, 104</value>
+  </data>
+  <data name="lblEstatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>694, 42</value>
+  </data>
+  <data name="lblEstatus.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblEstatus.Text" xml:space="preserve">
+    <value>Favor de colocar el dedo en el lector</value>
+  </data>
+  <data name="&gt;&gt;lblEstatus.Name" xml:space="preserve">
+    <value>lblEstatus</value>
+  </data>
+  <data name="&gt;&gt;lblEstatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEstatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblEstatus.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtEmployeCode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt</value>
+  </data>
+  <data name="txtEmployeCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>451, 149</value>
+  </data>
+  <data name="txtEmployeCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 24</value>
+  </data>
+  <data name="txtEmployeCode.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="txtEmployeCode.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="txtEmployeCode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;txtEmployeCode.Name" xml:space="preserve">
+    <value>txtEmployeCode</value>
+  </data>
+  <data name="&gt;&gt;txtEmployeCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmployeCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtEmployeCode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblMessageError.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMessageError.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt</value>
+  </data>
+  <data name="lblMessageError.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblMessageError.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 660</value>
+  </data>
+  <data name="lblMessageError.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 29</value>
+  </data>
+  <data name="lblMessageError.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblMessageError.Name" xml:space="preserve">
+    <value>lblMessageError</value>
+  </data>
+  <data name="&gt;&gt;lblMessageError.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMessageError.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblMessageError.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -203,6 +290,9 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
+  </data>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1352, 749</value>

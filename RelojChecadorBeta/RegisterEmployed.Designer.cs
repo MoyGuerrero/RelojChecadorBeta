@@ -35,28 +35,31 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtByte = new System.Windows.Forms.TextBox();
+            this.lblMensajeError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picRegisterHuella)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 35);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(7, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(211, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre Usuario";
+            this.label1.Text = "Codigo del empleado";
             // 
             // txtCodigoEmpleado
             // 
-            this.txtCodigoEmpleado.Location = new System.Drawing.Point(51, 68);
+            this.txtCodigoEmpleado.Location = new System.Drawing.Point(224, 35);
             this.txtCodigoEmpleado.Name = "txtCodigoEmpleado";
-            this.txtCodigoEmpleado.Size = new System.Drawing.Size(110, 20);
+            this.txtCodigoEmpleado.Size = new System.Drawing.Size(202, 20);
             this.txtCodigoEmpleado.TabIndex = 1;
             // 
             // btnCapturarHuella
             // 
-            this.btnCapturarHuella.Location = new System.Drawing.Point(51, 116);
+            this.btnCapturarHuella.Location = new System.Drawing.Point(454, 35);
             this.btnCapturarHuella.Name = "btnCapturarHuella";
             this.btnCapturarHuella.Size = new System.Drawing.Size(110, 23);
             this.btnCapturarHuella.TabIndex = 2;
@@ -66,7 +69,7 @@
             // 
             // picRegisterHuella
             // 
-            this.picRegisterHuella.Location = new System.Drawing.Point(51, 183);
+            this.picRegisterHuella.Location = new System.Drawing.Point(224, 111);
             this.picRegisterHuella.Name = "picRegisterHuella";
             this.picRegisterHuella.Size = new System.Drawing.Size(110, 107);
             this.picRegisterHuella.TabIndex = 3;
@@ -74,14 +77,14 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.Location = new System.Drawing.Point(51, 318);
+            this.lblStatus.Location = new System.Drawing.Point(187, 248);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(110, 23);
+            this.lblStatus.Size = new System.Drawing.Size(205, 23);
             this.lblStatus.TabIndex = 4;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(54, 353);
+            this.btnGuardar.Location = new System.Drawing.Point(224, 388);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(107, 28);
             this.btnGuardar.TabIndex = 5;
@@ -91,16 +94,29 @@
             // 
             // txtByte
             // 
-            this.txtByte.Location = new System.Drawing.Point(12, 420);
+            this.txtByte.Location = new System.Drawing.Point(221, 422);
             this.txtByte.Name = "txtByte";
             this.txtByte.Size = new System.Drawing.Size(205, 20);
             this.txtByte.TabIndex = 6;
+            this.txtByte.Visible = false;
+            // 
+            // lblMensajeError
+            // 
+            this.lblMensajeError.AutoSize = true;
+            this.lblMensajeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeError.ForeColor = System.Drawing.Color.White;
+            this.lblMensajeError.Location = new System.Drawing.Point(12, 317);
+            this.lblMensajeError.Name = "lblMensajeError";
+            this.lblMensajeError.Size = new System.Drawing.Size(0, 24);
+            this.lblMensajeError.TabIndex = 7;
             // 
             // RegisterEmployed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(181)))));
+            this.ClientSize = new System.Drawing.Size(596, 450);
+            this.Controls.Add(this.lblMensajeError);
             this.Controls.Add(this.txtByte);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblStatus);
@@ -127,5 +143,6 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtByte;
+        private System.Windows.Forms.Label lblMensajeError;
     }
 }

@@ -20,7 +20,8 @@ namespace RelojChecadorBeta
         private Enrollment Enrollment;
         public event Action<bool> ReiniciarEvento;
         private Template template;
-        private RelojChecadorBetaEntities1 context;
+        private RelojChecador context;
+        private Empleado empleado;
         public RegisterEmployed()
         {
             InitializeComponent();
@@ -34,6 +35,37 @@ namespace RelojChecadorBeta
 
         private void btnCapturarHuella_Click(object sender, EventArgs e)
         {
+            btnCapturarHuella.Enabled = false;
+            txtCodigoEmpleado.Enabled = false;
+            string codigo = txtCodigoEmpleado.Text.ToUpper().Trim();
+
+            if (codigo.Length == 0)
+            {
+                clearMessage("El campo codigo empleado no puede estar vacio.", Color.Red);
+                return;
+            }
+
+            if (!codigo.StartsWith("E"))
+            {
+                clearMessage("El codigo empleado debe iniciar con la letra E", Color.Red);
+                return;
+            }
+
+            if (codigo.Length < 7 || codigo.Length >= 8)
+            {
+
+                clearMessage("El codigo empleado debe tener 7 caracteres", Color.Red);
+                return;
+            }
+
+            empleado = context.Empleado.FirstOrDefault(emp => emp.CodigoEmpleado == codigo);
+
+
+            if (empleado is null || empleado.Activo == 0)
+            {
+                clearMessage("EL usuario no existe o esta dado de baja", Color.Red);
+                return;
+            }
             lblStatus.Visible = true;
             picRegisterHuella.Visible = true;
             UpdateStatus();
@@ -83,7 +115,7 @@ namespace RelojChecadorBeta
             }
             else
             {
-                lblStatus.Text = String.Format("Hola Mundo {0}", Enrollment.FeaturesNeeded);
+                lblStatus.Text = String.Format("Favor de color tu dedo al lector {0} veces", Enrollment.FeaturesNeeded);
             }
         }
 
@@ -129,12 +161,6 @@ namespace RelojChecadorBeta
             //MessageBox.Show(txtCodigoEmpleado.Text);
 
             var codigoEmpleado = txtCodigoEmpleado.Text;
-
-            if (codigoEmpleado.Trim() == "" || !codigoEmpleado.StartsWith("E"))
-            {
-                MessageBox.Show("Favor de ingresar el codigo del empleado valido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             guardarHuella(codigoEmpleado, streanFingerPrinters);
         }
 
@@ -143,30 +169,27 @@ namespace RelojChecadorBeta
 
             try
             {
-                var isExistDeployed = context.Empleado.Where(e => e.Activo == 1).FirstOrDefault(e => e.CodigoEmpleado == codigoEmpleado);
-
-                if (isExistDeployed is null)
-                {
-                    MessageBox.Show($"El Empleado con el numero de empleado {codigoEmpleado} no existe o esta dado de baja.");
-                    return;
-                }
 
                 var isExistPrinterFingers = context.Huella.Any(e => e.Huella1 == streanFingerPrinters);
 
 
                 if (isExistPrinterFingers)
                 {
-                    MessageBox.Show("El registro de la huella ya existe. Favor de intentar con otro dedo.","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("El registro de la huella ya existe. Favor de intentar con otro dedo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 context.Huella.Add(new Huella
                 {
                     Huella1 = streanFingerPrinters,
-                    IdEmpleado = isExistDeployed.Id
+                    IdEmpleado = empleado.Id
                 });
 
                 context.SaveChanges();
+
+                txtCodigoEmpleado.Enabled = true;
+                btnCapturarHuella.Enabled = true;
+                txtCodigoEmpleado.Text = "";
 
                 MessageBox.Show($"El registro del empleado con codigo {codigoEmpleado} se ha guardado con éxito.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.None);
 
@@ -181,7 +204,28 @@ namespace RelojChecadorBeta
         private void RegisterEmployed_Load(object sender, EventArgs e)
         {
 
-            context = new RelojChecadorBetaEntities1();
+            context = new RelojChecador();
+        }
+
+        private void clearMessage(string message, Color color)
+        {
+
+            lblMensajeError.Text = message;
+            lblMensajeError.ForeColor = color;
+            var clearMessage = new System.Windows.Forms.Timer();
+
+
+            clearMessage.Interval = 3000;
+
+            clearMessage.Tick += (sender, e) =>
+            {
+                btnCapturarHuella.Enabled = true;
+                txtCodigoEmpleado.Enabled = true;
+                txtCodigoEmpleado.Focus();
+                lblMensajeError.Text = "";
+                clearMessage.Stop();
+            };
+            clearMessage.Start();
         }
     }
 }

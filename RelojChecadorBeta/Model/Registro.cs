@@ -15,7 +15,8 @@ namespace RelojChecadorBeta.Model
     public partial class Registro
     {
         public int Id { get; set; }
-        public System.DateTime Registro1 { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public System.TimeSpan Hora { get; set; }
         public int IdEmpleado { get; set; }
     
         public virtual Empleado Empleado { get; set; }

@@ -33,7 +33,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Registro" Type="datetime" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
           <Property Name="IdEmpleado" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Huella_Empleado">
@@ -113,7 +114,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Registro1" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
           <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Empleado" Relationship="Self.FK_Registro_Empleado" FromRole="Registro" ToRole="Empleado" />
         </EntityType>
@@ -145,7 +147,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RelojChecadorBetaEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RelojChecador" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Empleado" EntityType="Self.Empleado" />
           <EntitySet Name="Huella" EntityType="Self.Huella" />
           <EntitySet Name="Registro" EntityType="Self.Registro" />
@@ -163,7 +165,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RelojChecadorBetaModelStoreContainer" CdmEntityContainer="RelojChecadorBetaEntities1">
+        <EntityContainerMapping StorageEntityContainer="RelojChecadorBetaModelStoreContainer" CdmEntityContainer="RelojChecador">
           <EntitySetMapping Name="Empleado">
             <EntityTypeMapping TypeName="RelojChecadorBetaModel.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
@@ -193,7 +195,8 @@
             <EntityTypeMapping TypeName="RelojChecadorBetaModel.Registro">
               <MappingFragment StoreEntitySet="Registro">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Registro1" ColumnName="Registro" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
                 <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
               </MappingFragment>
             </EntityTypeMapping>

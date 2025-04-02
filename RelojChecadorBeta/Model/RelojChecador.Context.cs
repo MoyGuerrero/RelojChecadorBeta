@@ -13,10 +13,10 @@ namespace RelojChecadorBeta.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RelojChecadorBetaEntities1 : DbContext
+    public partial class RelojChecador : DbContext
     {
-        public RelojChecadorBetaEntities1()
-            : base("name=RelojChecadorBetaEntities1")
+        public RelojChecador()
+            : base("name=RelojChecador")
         {
         }
     
